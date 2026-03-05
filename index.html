@@ -1,121 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Gagan Rana | Web Developer Portfolio</title>
-
-<meta name="description" content="Portfolio of Gagan Rana - Web Developer, Designer and Freelancer">
-<meta name="keywords" content="Gagan Rana, Web Developer, Portfolio, HTML CSS JavaScript">
-<meta name="author" content="Gagan Rana">
+<title>Gagan Rana | Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 
-body{
-margin:0;
-font-family:Poppins;
-background:#0f172a;
-color:white;
-scroll-behavior:smooth;
+:root{
+--bg:#0f172a;
+--card:#1e293b;
+--text:#e2e8f0;
+--accent:#38bdf8;
 }
 
+.light{
+--bg:#f1f5f9;
+--card:#ffffff;
+--text:#0f172a;
+--accent:#2563eb;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:var(--bg);
+color:var(--text);
+line-height:1.6;
+}
+
+/* HEADER */
+
 header{
+padding:80px 20px;
 text-align:center;
-padding:100px 20px;
 }
 
 h1{
-font-size:50px;
+font-size:3rem;
 }
 
-.tag{
-color:#38bdf8;
+#typing{
+color:var(--accent);
+font-size:1.4rem;
 }
 
 .btn{
-display:inline-block;
 margin-top:20px;
+display:inline-block;
 padding:12px 25px;
-background:#38bdf8;
+background:var(--accent);
 color:white;
 border-radius:8px;
 text-decoration:none;
+transition:.3s;
+margin-right:10px;
+}
+
+.btn:hover{
+transform:scale(1.05);
 }
 
 section{
+padding:60px 20px;
 max-width:1100px;
 margin:auto;
-padding:60px 20px;
 }
+
+h2{
+margin-bottom:20px;
+}
+
+/* SKILLS */
+
+.skills span{
+background:var(--accent);
+color:white;
+padding:8px 14px;
+border-radius:20px;
+margin:5px;
+display:inline-block;
+font-size:14px;
+}
+
+/* CARDS */
 
 .cards{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+gap:20px;
 margin-top:30px;
 }
 
 .card{
-background:#1e293b;
+background:var(--card);
 padding:25px;
-border-radius:15px;
-transition:0.3s;
+border-radius:14px;
+transition:.3s;
 }
 
 .card:hover{
-transform:translateY(-10px);
+transform:translateY(-6px);
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
 }
 
-img{
+.card img{
 width:100%;
 border-radius:10px;
-}
-
-.skills{
-margin-top:30px;
-}
-
-.skill{
 margin-bottom:15px;
 }
 
-.bar{
-background:#334155;
-height:8px;
-border-radius:10px;
+/* CONTACT */
+
+.contact p{
+margin:8px 0;
 }
 
-.fill{
-height:8px;
-background:#38bdf8;
-border-radius:10px;
-}
+/* FOOTER */
 
 footer{
 text-align:center;
-padding:40px;
+padding:30px;
 opacity:0.7;
 }
 
-form input,form textarea{
-width:100%;
-padding:10px;
-margin:10px 0;
+/* THEME BUTTON */
+
+.toggle{
+position:fixed;
+top:20px;
+right:20px;
+padding:8px 14px;
 border:none;
-border-radius:5px;
+border-radius:8px;
+background:var(--accent);
+color:white;
+cursor:pointer;
 }
 
-form button{
-background:#38bdf8;
+marquee{
+background:black;
 color:white;
-padding:10px 20px;
-border:none;
-border-radius:6px;
-cursor:pointer;
+padding:8px;
+font-weight:600;
 }
 
 </style>
@@ -124,16 +159,19 @@ cursor:pointer;
 
 <body>
 
+<button class="toggle" onclick="toggleTheme()">Theme</button>
+
+<marquee>
+🔥 Welcome to Gagan Rana Portfolio | Web Developer | UI/UX Designer | Freelancer 🔥
+</marquee>
+
 <header>
 
 <h1>Gagan Rana</h1>
 
-<p class="tag">Frontend Developer | UI/UX Designer | Freelancer</p>
+<h2><span id="typing"></span></h2>
 
 <a class="btn" href="#contact">Hire Me</a>
-
-<br>
-
 <a class="btn" href="resume.pdf" download>Download Resume</a>
 
 </header>
@@ -142,28 +180,48 @@ cursor:pointer;
 
 <h2>About Me</h2>
 
-<p>I am a passionate web developer and BCA student who enjoys building modern websites, creative UI designs and responsive web applications.</p>
+<p>
+I am a passionate web developer and BCA student who loves building modern websites and web apps. I enjoy creating clean UI designs and writing efficient code.
+</p>
+
+</section>
+
+<section>
+
+<h2>My Skills</h2>
 
 <div class="skills">
 
-<div class="skill">
-HTML
-<div class="bar"><div class="fill" style="width:90%"></div></div>
+<span>HTML</span>
+<span>CSS</span>
+<span>JavaScript</span>
+<span>React</span>
+<span>Python</span>
+<span>UI/UX</span>
+
 </div>
 
-<div class="skill">
-CSS
-<div class="bar"><div class="fill" style="width:85%"></div></div>
+</section>
+
+<section>
+
+<h2>Services</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Website Development</h3>
+<p>I create responsive websites using modern technologies.</p>
 </div>
 
-<div class="skill">
-JavaScript
-<div class="bar"><div class="fill" style="width:70%"></div></div>
+<div class="card">
+<h3>UI/UX Design</h3>
+<p>Clean and user friendly interface designs.</p>
 </div>
 
-<div class="skill">
-React
-<div class="bar"><div class="fill" style="width:60%"></div></div>
+<div class="card">
+<h3>SEO Optimization</h3>
+<p>Improve website ranking on search engines.</p>
 </div>
 
 </div>
@@ -178,37 +236,37 @@ React
 
 <div class="card">
 
-<img src="project1.png">
+<img src="https://via.placeholder.com/400x200">
 
 <h3>Portfolio Website</h3>
 
-<p>Modern developer portfolio with animations.</p>
+<p>Modern personal portfolio built using HTML CSS and JavaScript.</p>
 
-<a class="btn">View Project</a>
-
-</div>
-
-<div class="card">
-
-<img src="project2.png">
-
-<h3>E-commerce Website</h3>
-
-<p>Online store UI with product listing and cart.</p>
-
-<a class="btn">View Project</a>
+<a class="btn" href="#">View Project</a>
 
 </div>
 
 <div class="card">
 
-<img src="project3.png">
+<img src="https://via.placeholder.com/400x200">
+
+<h3>E-Commerce Website</h3>
+
+<p>Online shopping website with product listing and cart.</p>
+
+<a class="btn" href="#">View Project</a>
+
+</div>
+
+<div class="card">
+
+<img src="https://via.placeholder.com/400x200">
 
 <h3>Task Manager App</h3>
 
-<p>Web app to manage daily tasks and productivity.</p>
+<p>Web application to manage daily tasks and productivity.</p>
 
-<a class="btn">View Project</a>
+<a class="btn" href="#">View Project</a>
 
 </div>
 
@@ -216,32 +274,79 @@ React
 
 </section>
 
-<section id="contact">
+<section id="contact" class="contact">
 
 <h2>Contact Me</h2>
 
-<form action="https://formsubmit.co/your@email.com" method="POST">
-
-<input type="text" placeholder="Your Name" required>
-
-<input type="email" placeholder="Your Email" required>
-
-<textarea rows="5" placeholder="Your Message"></textarea>
-
-<button type="submit">Send Message</button>
-
-</form>
+<p>Email: gaganrana20@example.com</p>
+<p>GitHub: github.com/gaganrana20k</p>
+<p>LinkedIn: linkedin.com</p>
 
 </section>
 
 <footer>
 
-<p>© 2026 Gagan Rana | Portfolio</p>
-
-<p>GitHub: github.com/gaganrana20k-jpg</p>
+<p>© 2026 Gagan Rana. All Rights Reserved.</p>
 
 </footer>
 
-</body>
+<script>
 
+/* THEME TOGGLE */
+
+function toggleTheme(){
+document.body.classList.toggle("light")
+}
+
+/* TYPING ANIMATION */
+
+const words = [
+"Web Developer 💻",
+"UI/UX Designer 🎨",
+"Freelancer 🚀",
+"BCA Student 📚",
+"Future Software Engineer 🔥"
+];
+
+let i = 0;
+let j = 0;
+let currentWord = "";
+let isDeleting = false;
+
+function type(){
+
+currentWord = words[i];
+
+if(isDeleting){
+j--;
+}else{
+j++;
+}
+
+document.getElementById("typing").textContent = currentWord.substring(0,j);
+
+if(!isDeleting && j == currentWord.length){
+isDeleting = true;
+setTimeout(type,1000);
+return;
+}
+
+if(isDeleting && j == 0){
+isDeleting = false;
+i++;
+
+if(i == words.length){
+i = 0;
+}
+}
+
+setTimeout(type,100);
+
+}
+
+type();
+
+</script>
+
+</body>
 </html>
