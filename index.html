@@ -326,8 +326,71 @@ setTimeout(type,100);
 }
 
 type();
+function openPopup(type){
 
+let title = "";
+let text = "";
+
+if(type === "portfolio"){
+title = "Portfolio Website";
+text = "This is my personal portfolio built using HTML, CSS and JavaScript with modern UI design.";
+}
+
+if(type === "ecommerce"){
+title = "E-Commerce Website";
+text = "An online shopping website with product listing, cart system and checkout functionality.";
+}
+
+if(type === "task"){
+title = "Task Manager App";
+text = "A productivity web app to manage daily tasks, set goals and track progress.";
+}
+
+document.getElementById("popup-title").innerText = title;
+document.getElementById("popup-text").innerText = text;
+
+document.getElementById("popup").style.display = "block";
+document.getElementById("overlay").style.display = "block";
+}
+
+function closePopup(){
+document.getElementById("popup").style.display = "none";
+document.getElementById("overlay").style.display = "none";
+}
 </script>
+<div id="popup" style="
+display:none;
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:white;
+color:black;
+padding:25px;
+border-radius:12px;
+width:320px;
+z-index:1000;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+">
 
+<h3 id="popup-title"></h3>
+<p id="popup-text"></p>
+
+<br>
+<button class="btn" onclick="closePopup()">Close</button>
+
+</div>
+
+<!-- overlay -->
+<div id="overlay" style="
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+z-index:999;
+" onclick="closePopup()"></div>
 </body>
 </html>
